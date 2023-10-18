@@ -6,19 +6,19 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class Produto {
+public class Carro {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     protected Integer id;
-    private String name;  // Mudança: nome para name
+    private String name;
     private double preco;
 
-    public Produto(String name, double preco) {  // Mudança: nome para name
+    public Carro(String name, double preco) {
         this.id = id;
         this.name = name;
         this.preco = preco;
     }
-    public Produto() {
+    public Carro() {
     }
     public Integer getId() {
         return id;

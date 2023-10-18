@@ -1,12 +1,15 @@
 package com.omegascar.demo.entities;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
 public class Conta {
     @Id
-    private long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    protected long id;
     private String name;
     private String cpf;
     private String telefone;
@@ -15,7 +18,7 @@ public class Conta {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -43,10 +46,10 @@ public class Conta {
         this.telefone = telefone;
     }
 
-    public Conta() {
+    public Conta(String marcola, String s, String number) {
     }
 
-    public Conta(long id, String name, String cpf, String telefone) {
+    public Conta(Integer id, String name, String cpf, String telefone) {
         this.id = id;
         this.name = name;
         this.cpf = cpf;
