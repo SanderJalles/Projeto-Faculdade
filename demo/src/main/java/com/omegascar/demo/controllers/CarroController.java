@@ -20,13 +20,14 @@ public class CarroController {
         carroService.registrarCarro(carro);
     }
 
+    @DeleteMapping("/deletecarro/{id}")
+    public void deleteCarro(@PathVariable("id") long id) {
+        carroService.deleteCarro(id);
+    }
+
     @GetMapping
     public List<Carro> getCarros() {
-        Carro p1 = new Carro("Honda Civic", 120000.0);
-        Carro p2 = new Carro("Toyota Corolla GR", 140000.0);
-        Carro p3 = new Carro("Audi TTrs", 220000.0);
-
-        List<Carro> carros = Arrays.asList(p1, p2, p3);
+        List<Carro> carros = carroService.getAllCarros();
         return carros;
     }
 }
