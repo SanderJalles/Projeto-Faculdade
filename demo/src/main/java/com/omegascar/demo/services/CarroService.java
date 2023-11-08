@@ -42,5 +42,17 @@ public class CarroService {
     public List<Carro> getAllCarros() {
         return (List<Carro>) carroRepository.findAll();
     }
+
+    public void editCarro(long id, Carro novoCarro) {
+        Carro carroExistente = procurarPorId(id);
+
+        if (carroExistente != null) {
+            carroExistente.setName(novoCarro.getName());
+            carroExistente.setPreco(novoCarro.getPreco());
+
+            carroRepository.save(carroExistente);
+        }
+    }
+
 }
 

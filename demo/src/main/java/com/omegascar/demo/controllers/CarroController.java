@@ -19,6 +19,11 @@ public class CarroController {
     public void registrarcarro(@RequestBody @Valid Carro carro) {
         carroService.registrarCarro(carro);
     }
+    @PutMapping("/editcarro/{id}")
+    public void editCarro(@PathVariable("id") long id, @RequestBody @Valid Carro carro) {
+        carroService.editCarro(id, carro);
+    }
+
 
     @DeleteMapping("/deletecarro/{id}")
     public void deleteCarro(@PathVariable("id") long id) {
