@@ -25,7 +25,7 @@ public class ContaController {
     }
     @PutMapping("/editarconta/{id}")
     public void editarconta(@PathVariable("id") Long id, @RequestBody @Valid Conta conta){
-    ContaService.editarConta(id, conta);
+    contaService.editarConta(id, conta);
     }
 
     @DeleteMapping("/deletarconta/{id}")

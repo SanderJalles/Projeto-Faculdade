@@ -13,7 +13,16 @@ public class ContaService {
     @Autowired
     ContaRepository contaRepository;
 
-    public static void editarConta(Long id, Conta conta) {
+
+    public void editarConta(Long id, Conta conta) {
+     Conta cliente = contaRepository.findById(id);
+     if (cliente != null) {
+         cliente.setCpf(conta.getCpf());
+         cliente.setName(conta.getName());
+         cliente.setTelefone(conta.getTelefone());
+         contaRepository.save(cliente);
+     }
+
     }
 
     public void registrarConta(Conta conta) {
