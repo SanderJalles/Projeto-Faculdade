@@ -23,14 +23,18 @@ public class ContaController {
     public void registrarconta(@RequestBody @Valid Conta conta){
         contaService.registrarConta(conta);
     }
-
-    @GetMapping
-    public List<Conta>getContas(){
-        Conta p1 = new Conta("Marcola", "132.234.122.44", "932218765");
-        Conta p2 = new Conta("Matheus", "124.675.235.88","976542321");
-
-        List<Conta> contas = Arrays.asList(p1,p2);
-        return contas;
+    @PutMapping("/editarconta/{id}")
+    public void editarconta(@PathVariable("id") Long id, @RequestBody @Valid Conta conta){
+    ContaService.editarConta(id, conta);
     }
 
+    @DeleteMapping("/deletarconta/{id}")
+    public void deletarConta(@PathVariable("id") Long id) {contaService.deleteConta(id);}
+
+    @GetMapping
+    public List<Conta> getContas(){
+        List<Conta> contas = contaService.getAllContas();
+        return contas;
+    }
 }
+

@@ -9,10 +9,14 @@ import jakarta.persistence.Id;
 public class Conta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    protected long id;
+    protected Integer id;
     private String name;
     private String cpf;
     private String telefone;
+
+    public Conta() {
+
+    }
 
     public long getId() {
         return id;
@@ -46,8 +50,6 @@ public class Conta {
         this.telefone = telefone;
     }
 
-    public Conta(String marcola, String s, String number) {
-    }
 
     public Conta(Integer id, String name, String cpf, String telefone) {
         this.id = id;
