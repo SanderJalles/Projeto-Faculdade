@@ -34,6 +34,8 @@ public class ContaService {
     }
 
     public void deleteConta(Long id) {
+        Conta conta = procurarPorId(id);
+        contaRepository.delete(conta);
     }
 
     public List<Conta> getAllContas() { return (List<Conta>) contaRepository.findAll();}
