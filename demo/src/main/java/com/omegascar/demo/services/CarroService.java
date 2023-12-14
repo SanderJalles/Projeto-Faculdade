@@ -9,19 +9,16 @@ import java.util.List;
 
 @Service
 public class CarroService {
-
     private double preco;
-
     @Autowired
     CarroRepository carroRepository;
-
     @Autowired
     public CarroService(CarroRepository carroRepository) {
         this.carroRepository = carroRepository;
     }
 
-    public void registrarCarro(Carro carro) {
-        carroRepository.save(carro);
+    public Carro registrarCarro (Carro carro) {
+        return carroRepository.save(carro);
     }
     public void deleteCarro(long id) {
         carroRepository.delete(procurarPorId(id));

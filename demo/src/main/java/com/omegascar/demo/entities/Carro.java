@@ -13,10 +13,13 @@ public class Carro {
     private String name;
     private double preco;
 
-    public Carro(String name, double preco) {
+    private String imagem;
+
+    public Carro(String name, double preco, String imagem) {
         this.id = id;
         this.name = name;
         this.preco = preco;
+        this.imagem = imagem;
     }
     public Carro() {
     }
@@ -42,5 +45,13 @@ public class Carro {
 
     public void setPreco(double preco) {
         this.preco = preco;
+    }
+
+    public String getImagem() {
+        return imagem;
+    }
+
+    public void setImagem(String imagem) {
+        this.imagem = imagem;
     }
 }
